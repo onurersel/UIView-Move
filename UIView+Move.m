@@ -12,49 +12,52 @@
 @dynamic top, left, right, bottom;
 
 
+#pragma mark - view coordinates
+
+
+#pragma mark x
 -(float)x
 {
     return self.frame.origin.x;
 }
 -(void)setX:(float)v
 {
-    self.frame = CGRectMake(v, self.frame.origin.y, self.frame.size.width, self
-                            .frame.size.height);
+    self.frame = CGRectMake(v, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
 }
 
+#pragma mark y
 -(float)y
 {
     return self.frame.origin.y;
 }
 -(void)setY:(float)v
 {
-    self.frame = CGRectMake(self.frame.origin.x, v, self.frame.size.width, self
-                            .frame.size.height);
+    self.frame = CGRectMake(self.frame.origin.x, v, self.frame.size.width, self.frame.size.height);
 }
 
-
+#pragma mark width
 -(float)width
 {
     return self.frame.size.width;
 }
 -(void)setWidth:(float)v
 {
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, v, self
-                            .frame.size.height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, v, self.frame.size.height);
 }
 
-
+#pragma mark height
 -(float)height
 {
     return self.frame.size.height;
 }
 -(void)setHeight:(float)v
 {
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self
-                            .frame.size.width, v);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, v);
 }
 
+#pragma mark - relative position
 
+#pragma mark top
 -(float)top
 {
     return self.y;
@@ -64,7 +67,7 @@
     self.y = v;
 }
 
-
+#pragma mark left
 -(float)left
 {
     return self.x;
@@ -74,24 +77,45 @@
     self.x = v;
 }
 
-
+#pragma mark right
 -(float)right
 {
-    return self.x + self.width;
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return 0;
+    }
+    
+    return _s.width - self.x - self.width;
 }
 -(void)setRight:(float)v
 {
-    self.x = v - self.width;
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return;
+    }
+    
+    self.x = _s.width - v - self.width;
 }
 
 
+#pragma mark bottom
 -(float)bottom
 {
-    return self.y + self.height;
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return 0;
+    }
+    
+    return _s.height - self.y - self.height;
 }
 -(void)setBottom:(float)v
 {
-    self.y = v - self.height;
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return;
+    }
+    
+    self.y = _s.height - v - self.height;
 }
 
 
