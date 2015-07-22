@@ -97,6 +97,9 @@
     XCTAssertEqual(testView.left,   110);
     XCTAssertEqual(testView.right,  -175);
     XCTAssertEqual(testView.bottom, -433);
+    
+    NSLog(@"⬇︎⬇︎⬇︎ Testing CGLogRect macro. Following line is normal ⬇︎⬇︎⬇︎");
+    NSLogRect(testView.frame);
 }
 
 @end
