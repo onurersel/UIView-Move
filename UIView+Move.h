@@ -27,5 +27,7 @@
 @property (nonatomic)   float left;
 @property (nonatomic)   float right;
 @property (nonatomic)   float bottom;
+@property (nonatomic)   float midX;
+@property (nonatomic)   float midY;
 
 @end

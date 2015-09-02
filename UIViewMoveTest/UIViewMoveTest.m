@@ -98,8 +98,39 @@
     XCTAssertEqual(testView.right,  -175);
     XCTAssertEqual(testView.bottom, -433);
     
+    
     NSLog(@"⬇︎⬇︎⬇︎ Testing CGLogRect macro. Following line is normal ⬇︎⬇︎⬇︎");
     NSLogRect(testView.frame);
+}
+
+-(void)testMid
+{
+    testSuperview.width = 200;
+    testView.width = 60;
+    [testSuperview addSubview:testView];
+    
+    testView.midX = 0;
+    XCTAssertEqual(testView.x, 70);
+    
+    testView.midX = 40;
+    XCTAssertEqual(testView.x, 110);
+
+    testView.midX = -70;
+    XCTAssertEqual(testView.x, 0);
+    
+    
+    testSuperview.height = 200;
+    testView.height = 60;
+    [testSuperview addSubview:testView];
+    
+    testView.midY = 0;
+    XCTAssertEqual(testView.y, 70);
+    
+    testView.midY = 40;
+    XCTAssertEqual(testView.y, 110);
+    
+    testView.midY = -70;
+    XCTAssertEqual(testView.y, 0);
 }
 
 @end

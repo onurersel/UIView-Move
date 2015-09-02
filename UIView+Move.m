@@ -11,6 +11,7 @@
 @implementation UIView (Move)
 @dynamic x, y, width, height;
 @dynamic top, left, right, bottom;
+@dynamic midX, midY;
 
 
 #pragma mark - view coordinates
@@ -119,5 +120,42 @@
     self.y = _s.height - v - self.height;
 }
 
+#pragma mark mid
+-(float)midX
+{
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return 0;
+    }
+    
+    return self.x - (_s.width/2.0 - self.width/2.0);
+}
+-(void)setMidX:(float)v
+{
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return;
+    }
+    
+    self.x = (_s.width/2.0 - self.width/2.0) + v;
+}
+-(float)midY
+{
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return 0;
+    }
+    
+    return self.y - (_s.height/2.0 - self.height/2.0);
+}
+-(void)setMidY:(float)v
+{
+    UIView *_s = self.superview;
+    if (_s == nil) {
+        return;
+    }
+    
+    self.y = (_s.height/2.0 - self.height/2.0) + v;
+}
 
 @end
