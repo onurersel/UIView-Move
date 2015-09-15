@@ -84,6 +84,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [right] needs a superview to calculate position");
         return 0;
     }
     
@@ -93,6 +94,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [setRight] needs a superview to calculate position");
         return;
     }
     
@@ -105,6 +107,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [bottom] needs a superview to calculate position");
         return 0;
     }
     
@@ -114,6 +117,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [setBottom] needs a superview to calculate position");
         return;
     }
     
@@ -125,6 +129,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [midX] needs a superview to calculate position");
         return 0;
     }
     
@@ -134,6 +139,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [setMidX] needs a superview to calculate position");
         return;
     }
     
@@ -143,6 +149,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [midY] needs a superview to calculate position");
         return 0;
     }
     
@@ -152,6 +159,7 @@
 {
     UIView *_s = self.superview;
     if (_s == nil) {
+        NSLog(@"Warning|UIView+Move: [setMidY] needs a superview to calculate position");
         return;
     }
     

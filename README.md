@@ -46,3 +46,11 @@ view.bottom = 0;
   view.x = 0;
 }];
 ```
+
+
+Or you can position the view's center relative to center of it's parent frame
+```objc 
+//Places view to middle of its parent
+view.midX = 0;
+view.midY = 0;
+```
