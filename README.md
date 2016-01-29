@@ -4,6 +4,13 @@
 
 It's too tidious to reassign unchanged frame values everytime you want to move your UIView, even though you only change a single parameter. UIView-Move supplies helper getter/setter methods for these situations.
 
+### Installation
+
+Copy UIView-Move.h and UIView-Move.m files to your project. Or use Cocoapods
+
+	pod 'UIView-Move'
+
+
 ### Usage
 
 
