@@ -6,7 +6,7 @@ It's too tidious to reassign unchanged frame values everytime you want to move y
 
 ### Installation
 
-Copy UIView-Move.h and UIView-Move.m files to your project. Or use Cocoapods
+Copy UIView-Move.h and UIView-Move.m files to your project. Or use CocoaPods
 
 	pod 'UIView-Move'
 
